@@ -43,8 +43,8 @@ async function show(req, res) {
     await Toy.findByIdAndUpdate(req.params.toyId, req.body,
     {new: true})
     res.redirect(`/toys/${req.params.toyId}`)
- }
-
+}
+    
 export {
     index,
     newToy as new,
