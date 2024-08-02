@@ -15,7 +15,7 @@
                 <form class="form" method="POST" action="/toys/<%= toy._id %>?_method=DELETE">
                     <button type="submit">❌</button>
                 </form>
-                <span style="color: magenta"><%= toy.toy %></span> - $<%= toy.price %>
+                <a href="/toys/<%= toy._id %>"><span style="color: magenta"><%= toy.toy %></span></a> - $<%= toy.price %>
             </li>
             <% }); %>
     </ul>

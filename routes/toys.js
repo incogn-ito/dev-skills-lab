@@ -6,8 +6,13 @@ const router = Router()
 // GET localhost:3000/users
 router.get('/', toysCtrl.index)
 router.get('/new', toysCtrl.new)
+router.get('/:toyId', toysCtrl.show)
+router.get('/:toyId/edit', toysCtrl.edit)
 router.post('/', toysCtrl.create)
 router.delete('/:toyId', toysCtrl.delete)
+router.put('/:toyId/update', toysCtrl.update)
+
+
 
 export { router }
 

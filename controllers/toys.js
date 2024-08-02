@@ -25,10 +25,32 @@ async function deleteToy(req, res) {
     res.redirect('/toys')
 }
 
+async function show(req, res) {
+    const toy = await Toy.findById(req.params.toyId) 
+    res.render('toys/show', {
+        toy
+    })
+ }
+
+ async function edit(req, res) {
+    const toy = await Toy.findById(req.params.toyId)
+    req.render('toys/edit', {
+        toy
+    })
+ }
+
+ async function update(req, res) {
+    await Toy.findByIdAndUpdate(req.params.toyId, req.body,
+    {new: true})
+    res.redirect(`/toys/${req.params.toyId}`)
+ }
 
 export {
     index,
     newToy as new,
     create,
     deleteToy as delete,
+    show,
+    edit,
+    update
 }
