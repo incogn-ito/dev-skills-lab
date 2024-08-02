@@ -20,9 +20,15 @@ async function create(req, res) {
     res.redirect('/toys')    
 }
 
+async function deleteToy(req, res) {
+    await Toy.findByIdAndDelete(req.params.toyId)
+    res.redirect('/toys')
+}
+
 
 export {
     index,
     newToy as new,
-    create
+    create,
+    deleteToy as delete,
 }

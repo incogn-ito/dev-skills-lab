@@ -11,11 +11,13 @@
     <a href="/toys/new">Add some things</a>
     <ul>
         <% toys.forEach(toy => { %>
-            <form class="form" action="/toys/<%= toy._id %>?_method=DELETE">
-                <button type="submit">X</button>
-            </form>
-            <li><span style="color: magenta"><%= toy.toy %></span> - $<%= toy.price %></li>
-        <% }); %>
+            <li>
+                <form class="form" method="POST" action="/toys/<%= toy._id %>?_method=DELETE">
+                    <button type="submit">❌</button>
+                </form>
+                <span style="color: magenta"><%= toy.toy %></span> - $<%= toy.price %>
+            </li>
+            <% }); %>
     </ul>
 </body>
 </html>

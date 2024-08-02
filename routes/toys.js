@@ -7,6 +7,7 @@ const router = Router()
 router.get('/', toysCtrl.index)
 router.get('/new', toysCtrl.new)
 router.post('/', toysCtrl.create)
+router.delete('/:toyId', toysCtrl.delete)
 
 export { router }
 
