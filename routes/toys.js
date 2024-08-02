@@ -10,9 +10,7 @@ router.get('/:toyId', toysCtrl.show)
 router.get('/:toyId/edit', toysCtrl.edit)
 router.post('/', toysCtrl.create)
 router.delete('/:toyId', toysCtrl.delete)
-router.put('/:toyId/update', toysCtrl.update)
-
-
+router.put('/:toyId', toysCtrl.update)
 
 export { router }
 

@@ -34,7 +34,7 @@ async function show(req, res) {
 
  async function edit(req, res) {
     const toy = await Toy.findById(req.params.toyId)
-    req.render('toys/edit', {
+    res.render('toys/edit', {
         toy
     })
  }
